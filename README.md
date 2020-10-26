@@ -1,6 +1,6 @@
 # Charity-API
 
-This is a charity organiztion API where users will be able to login/register and view different charitable organizations. "Publisher" will be able to add a single non-profit as well as update and delete those. Security will be implented using JSON Web Tokens, helmet.js, password encryption, and features to prevent XXS. I'll also be using PM2 process manager and docgen to create HTML files from Postman.
+This is a charity organiztion API where users will be able to login/register and view different charitable organizations. "Publisher" will be able to add a single non-profit as well as update and delete those. Security will be implented using JSON Web Tokens, helmet.js, password encryption, and features to prevent XXS. I'll also be using PM2 process manager and docgen to create HTML files from Postman. ***This API will have a fairly basic frontend as it's mainly a backend API***
 
 ## Route Structure (versioning)
 
