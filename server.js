@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const morgan = require('morgan')
 // Routes
 const nonprofits = require('./routes/nonprofits');
 
@@ -7,6 +8,11 @@ const nonprofits = require('./routes/nonprofits');
 dotenv.config({ path: './config/config.env' });
 
 const app = express();
+
+// @desc	mount logger
+if (process.env.NODE_ENV) {
+	app.use(morgan('dev'))
+}
 
 // Mount Routers
 app.use('/api/v1/nonprofits', nonprofits);
