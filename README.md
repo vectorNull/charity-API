@@ -7,6 +7,7 @@
 ![](https://img.shields.io/badge/morgan-v1.10.0-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
 ![](https://img.shields.io/badge/dotenv-v8.2.0-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
 ![](https://img.shields.io/badge/MongoDB-v8.2.0-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
+![](https://img.shields.io/badge/Mongoose-v5.10.11-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
 ![](https://img.shields.io/badge/JSONWebTokens-v8.2.0-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
 
 
