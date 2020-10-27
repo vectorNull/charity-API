@@ -6,6 +6,17 @@
 ![](https://img.shields.io/badge/Express-v4.17.1-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
 ![](https://img.shields.io/badge/morgan-v1.10.0-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
 ![](https://img.shields.io/badge/dotenv-v8.2.0-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
+![](https://img.shields.io/badge/MongoDB-v8.2.0-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
+![](https://img.shields.io/badge/JSONWebTokens-v8.2.0-informational?style=flat&logo=<jose>&logoColor=white&color=4dff4d)
+
+
+-----
+## Tools
+![](https://img.shields.io/badge/Tool-MongoDBCompass-informational?style=flat&logo=<jose>&logoColor=white&color=4d334d)
+![](https://img.shields.io/badge/Tool-Postman-informational?style=flat&logo=<jose>&logoColor=white&color=4d334d)
+![](https://img.shields.io/badge/Tool-MongoDBGeospatialIndex/GeoJSON-informational?style=flat&logo=<jose>&logoColor=white&color=4d334d)
+![](https://img.shields.io/badge/Tool-Nginx-informational?style=flat&logo=<jose>&logoColor=white&color=4d334d)
+![](https://img.shields.io/badge/Tool-SSL-informational?style=flat&logo=<jose>&logoColor=white&color=4d334d)
 
 -----
 
@@ -16,7 +27,7 @@ This is a charity organiztion API where users will be able to login/register and
 ## Route Structure (versioning)
 
 ````
-/api/v1/nonprofits
+/api/v1/nonprofits 
 
 /api/v1/reviews
 
