@@ -1,17 +1,21 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const morgan = require('morgan')
-// Routes
-const nonprofits = require('./routes/nonprofits');
+const morgan = require('morgan');
+const connectDB = require('./config/database');
 
 // Load env variables
 dotenv.config({ path: './config/config.env' });
 
+// Connect to database
+connectDB();
+
+// Routes
+const nonprofits = require('./routes/nonprofits');
 const app = express();
 
 // @desc	mount logger
-if (process.env.NODE_ENV) {
-	app.use(morgan('dev'))
+if (process.env.NODE_ENV === 'development') {
+	app.use(morgan('dev'));
 }
 
 // Mount Routers
