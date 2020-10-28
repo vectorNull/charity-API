@@ -1,6 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const colors = require('colors');
+
 const connectDB = require('./config/database');
 
 // Load env variables
@@ -27,5 +29,5 @@ app.listen(
 	PORT,
 	console.log(`
     Listening in ${process.env.NODE_ENV} on port ${PORT}
-`),
+`.yellow.bold),
 );
