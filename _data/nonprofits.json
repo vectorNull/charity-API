@@ -1,0 +1,16 @@
+[
+	{
+		"name": "United Way",
+		"email": "email@unitedway.com",
+		"website": "https://unitedway.com",
+		"guideStarAddress": "https://guidestar.com/unitedway",
+		"phone": "1234567890",
+		"ein": "34343434",
+		"fiscalSponsor": "John Smith",
+		"address": "123 Main St. Oceanside CA 92054",
+		"location": "",
+		"photo": "",
+		"description": "A Charity organization",
+		"verified": false
+	}
+]
