@@ -5,7 +5,7 @@ const router = express.Router();
 const {
 	getNonprofits,
 	getNonprofit,
-	addNonprofit,
+	createNonprofit,
 	updateNonprofit,
 	deleteNonprofit,
 } = require('../controllers/nonprofits');
@@ -13,7 +13,7 @@ const {
 // Root routes
 router.route('/')
     .get(getNonprofits)
-    .post(addNonprofit);
+    .post(createNonprofit);
 
 // Routes requiring id
 router
