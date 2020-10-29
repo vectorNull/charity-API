@@ -1,3 +1,5 @@
+const Nonprofit = require('../models/Nonprofit');
+
 // @desc    Get all nonprofits
 // @route   GET /api/v1/nonprofits
 // @access  Public
@@ -21,11 +23,18 @@ exports.getNonprofit = (req, res, next) => {
 // @desc    create a single nonprofits
 // @route   POST /api/v1/nonprofits
 // @access  Private
-exports.addNonprofit = (req, res, next) => {
-	res.status(200).json({
-		success: true,
-		data: 'create a new non-profit',
-	});
+exports.createNonprofit = async (req, res, next) => {
+	console.log(req.body);
+	try {
+		const nonprofit = await Nonprofit.create(req.body);
+		res.status(201).json({
+			success: true,
+			data: nonprofit,
+		});
+	} catch (err) {
+		res.status(400).json({ success: false });
+		console.log(err);
+	}
 };
 // @desc    Update a nonprofit
 // @route   PUT /api/v1/nonprofits
