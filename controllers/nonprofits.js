@@ -1,23 +1,38 @@
-const Nonprofit = require('../models/Nonprofit');
+const Nonprofit = require("../models/Nonprofit");
 
 // @desc    Get all nonprofits
 // @route   GET /api/v1/nonprofits
 // @access  Public
-exports.getNonprofits = (req, res, next) => {
-	res.status(200).json({
-		success: true,
-		data: `Get all non-profits`,
-	});
+exports.getNonprofits = async (req, res, next) => {
+	try {
+		const nonprofits = await Nonprofit.find();
+		res.status(200).json({
+			success: true,
+			count: nonprofits.length,
+			data: nonprofits,
+		});
+	} catch (error) {
+		res.status(400).json({ success: false });
+	}
 };
 
 // @desc    Get a single nonprofit
 // @route   GET /api/v1/nonprofits/:id
 // @access  Private
-exports.getNonprofit = (req, res, next) => {
-	res.status(200).json({
-		success: true,
-		data: `Get a single non-profit. Id: ${req.params.id}`,
-	});
+exports.getNonprofit = async (req, res, next) => {
+	try {
+		const nonprofit = await Nonprofit.findById(req.params.id);
+		res.status(200).json({
+			success: true,
+			data: nonprofit,
+		});
+		if (!nonprofit) {
+			// checks for null and by extension checks for properly formatted id
+			return res.status(400).json({ success: false });
+		}
+	} catch (error) {
+		res.status(400).json({ success: false });
+	}
 };
 
 // @desc    create a single nonprofits
@@ -39,19 +54,45 @@ exports.createNonprofit = async (req, res, next) => {
 // @desc    Update a nonprofit
 // @route   PUT /api/v1/nonprofits
 // @access  Private
-exports.updateNonprofit = (req, res, next) => {
-	res.status(200).json({
-		success: true,
-		data: `Udpate a non-profit. Id: ${req.params.id}`,
-	});
+exports.updateNonprofit = async (req, res, next) => {
+	try {
+		const nonprofit = await Nonprofit.findByIdAndUpdate(
+			req.params.id,
+			req.body,
+			{
+				new: true,
+				runValidators: true,
+			}
+		);
+		if (!nonprofit) {
+			return res.status(400).json({ success: false });
+		}
+		res.status(200).json({
+			success: true,
+			data: nonprofit,
+		});
+	} catch (error) {
+		res.status(400).json({ success: false })
+	}
+	
 };
 
 // @desc    Delete a nonprofit
 // @route   DELETE /api/v1/nonprofits
 // @access  Private
-exports.deleteNonprofit = (req, res, next) => {
-	res.status(200).json({
-		success: true,
-		data: `Delete a non-profit. Id: ${req.params.id}`,
-	});
+exports.deleteNonprofit = async (req, res, next) => {
+	try {
+		const nonprofit = await Nonprofit.findByIdAndDelete(
+			req.params.id,
+		);
+		if (!nonprofit) {
+			return res.status(400).json({ success: false });
+		}
+		res.status(200).json({
+			success: true,
+			data: {}
+		});
+	} catch (error) {
+		res.status(400).json({ success: false })
+	}
 };
