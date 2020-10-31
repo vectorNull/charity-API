@@ -58,7 +58,6 @@ Here's a link to my trello if your interested in seeing what I'm working on. I'm
 * [Docgen](https://github.com/thedevsaddam/docgen)
 * [Postman](https://www.getpostman.com/)
 * [VSCode](https://code.visualstudio.com/)
-<br />
 
 ### Security
 
