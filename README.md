@@ -44,4 +44,23 @@ Here's a link to my trello if your interested in seeing what I'm working on. I'm
 
 <img width="1929" alt="charityAPITrelloboard" src="https://user-images.githubusercontent.com/50179896/97124127-1e37d300-16ec-11eb-8ea8-2ea769ea2124.png">
 
+<br />
+-----
+<br />
+
+## Links to resources used
+### Tools
+* [MapQuest Dev API]( https://developer.mapquest.com/)
+* [Node.js](https://nodejs.org/en/)
+* [MongoDB](https://www.mongodb.com/)
+* [MailTrap](https://mailtrap.io/)
+* [Git](https://git-scm.com/)
+* [Docgen](https://github.com/thedevsaddam/docgen)
+* [Postman](https://www.getpostman.com/)
+* [VSCode](https://code.visualstudio.com/)
+<br />
+### Security
+* [JWT](https://jwt.io/)
+* [Security Packages Article]( https://hackernoon.com/express-js-important-npm-packagesrelated-to-security-2393466e18d5)
+* [NoSQL Injection Article](https://blog.websecurify.com/2014/08/hacking-nodejs-and-mongodb.html )
 
