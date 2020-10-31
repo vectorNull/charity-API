@@ -8,7 +8,6 @@ const errorHandler = require('./middleware/error')
 const app = express();
 app.use(express.json());
 
-
 // Load env variables
 dotenv.config({ path: "./config/config.env" });
 
@@ -21,7 +20,7 @@ const nonprofits = require("./routes/nonprofits");
 // Mount Routers
 app.use("/api/v1/nonprofits", nonprofits);
 
-
+// Mount error handler
 app.use(errorHandler);
 
 // @desc	mount logger
