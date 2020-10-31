@@ -59,6 +59,7 @@ Here's a link to my trello if your interested in seeing what I'm working on. I'm
 * [Postman](https://www.getpostman.com/)
 * [VSCode](https://code.visualstudio.com/)
 <br />
+
 ### Security
 
 * [JWT](https://jwt.io/)
