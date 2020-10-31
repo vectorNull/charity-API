@@ -60,6 +60,7 @@ Here's a link to my trello if your interested in seeing what I'm working on. I'm
 * [VSCode](https://code.visualstudio.com/)
 <br />
 ### Security
+
 * [JWT](https://jwt.io/)
 * [Security Packages Article](https://hackernoon.com/express-js-important-npm-packagesrelated-to-security-2393466e18d5)
 * [NoSQL Injection Article](https://blog.websecurify.com/2014/08/hacking-nodejs-and-mongodb.html)
