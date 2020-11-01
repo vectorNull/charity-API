@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Education",
+        "description": "International-Education is vital to lasting positive change in children’s lives. Yet for millions of children and youth in developing countries, education is beyond their grasp. Save the Children reaches the world’s most marginalized children – those who urgently need education to survive and thrive in more than 30 countries around the world. US-Nearly one in every four children in the U. S. lives in a poor family, according to the most recent figures from the federal government. Save the Children works in impoverished rural communities across the nation, in some places where conditions resemble parts of the developing world. We provide early childhood development, literacy, physical activity, and nutrition programming.",
+        "acceptingVolunteers": true,
+        "nonprofit": "5f9f334aff95055efcf764ce"
+    },
+    {
+        "name": "Health and Nutrition",
+        "description": "Save the Children works to ensure that children, their mothers and other caregivers have access to and use key health and nutrition services, as well as adopt healthy behaviors in both development and emergency situations. We use proven methods to fight the major causes of illness, death and malnutrition, and innovate ways to deliver these services most effectively to as many people as possible, especially in impoverished communities, during emergencies and in the aftermath of disasters.",
+        "acceptingVolunteers": true,
+        "nonprofit": "5f9f334aff95055efcf764ce"
+    },
+    {
+        "name": "Emergency Response",
+        "description": "Save the Children is prepared to help protect vulnerable boys and girls during disasters and their aftermath. We also support children's needs throughout ongoing, complex emergencies. On any given day, Save the Children's disaster relief experts can be found responding to the needs of children during these challenging times, providing essential food, safety, comfort and lifesaving care. In the US, Save the Children also responds to emergencies and natural disasters such as Hurricane Katrina, Oklahoma tornadoes, California wildfires and the tragedy at Sandy Hook Elementary School in Newtown, Connecticut.",
+        "acceptingVolunteers": true,
+        "nonprofit": "5f9f334aff95055efcf764ce"
+    },
+    {
+        "name": "child Protection",
+        "description": "Save the Children is on the ground every day ensuring children are protected from harm, including abuse, neglect, exploitation and violence, and we promote a safe family environment for every child.",
+        "acceptingVolunteers": true,
+        "nonprofit": "5f9f334aff95055efcf764d0"
+    },
+   { "name": "Legal Advocacy",
+        "description": "Alliance Defending Freedom (ADF) is an Alliance-building legal organization that advocates for the right of people to freely live out their faith. ADF champions God-given freedoms that allow for human flourishing while affirming the dignity of every person. ADF exists to serve an alliance of like-minded professionals, rallying attorneys and influencers from all spheres of culture to defend and promote the core issues of religious freedom, the sanctity of life, and marriage and family. ADF offers exceptional legal advocacy and expertise from our 58 staff attorneys based at our ADF headquarters in Arizona and at offices around the world, including at the United Nations in New York City. ADF also works with our more than 3,100-strong network of allied attorneys and has a 77% win rate in our cases, playing important roles in 49 Supreme Court victories.",
+        "acceptingVolunteers": false,
+        "nonprofit": "5f9f334aff95055efcf764d0"
+    },
+    {
+        "name": "Public Education",
+        "description": "ADF provides education to the public about the significance and state of religious freedom, the sanctity of life, and marriage and family in America and around the world. This is done through printed materials, mailings, webinars, social media, websites, email alerts, newsletters, media and personal appearances, blogs, op-eds, and events.",
+        "acceptingVolunteers": false,
+        "nonprofit": "5f9f334aff95055efcf764d0"
+    },
+    {
+        "name": "Allied Support and Training",
+        "description": "As an alliance building legal organization that advocates for the right of people to freely live out their faith, Alliance Defending Freedom (ADF) is committed to equipping allies to defend and promote religious liberty to the best of their ability, and to transform law and culture so true freedom can flourish.",
+        "acceptingVolunteers": false,
+        "nonprofit": "5f9f334aff95055efcf764d0"
+    },
+    {
+        "name": "Freedom Schools",
+        "description": " The CDF Freedom Schools® program seeks to build strong, literate, and empowered children prepared to make a difference in themselves, their families, communities, nation and world today. By providing summer and after-school reading enrichment for children who might otherwise not have access to books, the CDF Freedom Schools program plays a much needed role in helping to curb summer learning loss and close achievement gaps – and is a key part of CDF’s work to ensure a level playing field for all children. To date over 150,000 children have participated in Freedom Schools, and over 17,000 young adults have been trained as Servant Leader Interns. CDF Freedom Schools currently exist in 28 states. ",
+        "acceptingVolunteers": true,
+        "nonprofit": "5f9f334aff95055efcf764d1"
+    },
+    {
+        "name": "Summer Food and Education",
+        "description": "Summer food and education program where students receive complimentary lunch as well as educational activities.",
+        "acceptingVolunteers": true,
+        "nonprofit": "5f9f334aff95055efcf764d2"
+    },
+    {
+        "name": "Homeless Education and Literacy Program (H.E.L.P.)",
+        "description": "In partnership with NAEHCY (National Association of Educators for Homeless Children and Youth) distributes backpacks to homeless or at-risk students enrolled in U.S. public schools. ",
+        "acceptingVolunteers": true,
+        "nonprofit": "5f9f334aff95055efcf764d2"
+    }
+]
+
