@@ -6,11 +6,16 @@
 		"guideStarAddress": "https://www.guidestar.org/profile/06-0726487",
 		"phone": "12032214000",
 		"ein": "06-0726487",
-		"fiscalSponsor": "Janti Soeripto",
+		"president": "Janti Soeripto",
 		"address": "501 Kings Highway East, Suite 400, Fairfield, CT 06825",
 		"location": "",
 		"photo": "",
 		"description": "Save the Children believes every child deserves a future. In the United States and around the world, we work every day to give children a healthy start in life, the opportunity to learn and protection from harm. When crisis strikes, and children are most vulnerable, we are always among the first to respond and the last to leave. We ensure children’s unique needs are met and their voices are heard. We deliver lasting results for millions of children, including those hardest to reach. We do whatever it takes for children – every day and in times of crisis – transforming their lives and the future we share.",
+		"nteeCodes": {
+			"Q30": "nternational Development, Relief Services ",
+			"M20": "Disaster Preparedness and Relief Services",
+			"Q33": "International Relief"
+		},
 		"verified": true
 	},
 	{
@@ -20,11 +25,14 @@
 		"guideStarAddress": "https://www.guidestar.org/profile/13-1635294",
 		"phone": "17038367112",
 		"ein": "13-1635294",
-		"fiscalSponsor": "Brian A. Gallagher",
+		"president": "Brian A. Gallagher",
 		"address": "701 N. Fairfax Street, Alexandria, VA 22314",
 		"location": "",
 		"photo": "",
 		"description": "United Way fights for the health, education and financial stability of every person in every community. We win by living United. By forging unlikely partnerships. By finding new solutions to old problems. By mobilizing the best resources. And by inspiring individuals to join the fight against their community's most daunting social crises.",
+		"nteeCodes": {
+			"W99": "Public, Society Benefit - Multipurpose and Other N.E.C."
+		},
 		"verified": false
 	},
 	{
@@ -34,11 +42,14 @@
 		"guideStarAddress": "https://guidestar.com/unitedway",
 		"phone": "14804440020",
 		"ein": "54-1660459",
-		"fiscalSponsor": "Michael P. Farris",
+		"president": "Michael P. Farris",
 		"address": "15100 N. 90th Street, Scottsdale, AZ 85260 ",
 		"location": "",
 		"photo": "",
 		"description": "Alliance Defending Freedom is an alliance-building legal ministry that advocates for religious freedom to uphold justice and preserve the right of people to freely live out their faith.",
+		"nteeCodes": {
+			"R65": "Freedom of religious issues"
+		},
 		"verified": false
 	},
 	{
@@ -48,11 +59,16 @@
 		"guideStarAddress": "https://www.guidestar.org/profile/52-0895622",
 		"phone": "12026623554",
 		"ein": "52-0895622",
-		"fiscalSponsor": "Max Lesko",
+		"president": "Max Lesko",
 		"address": "840 First ST NE Suite 300, Washington, DC 20002 ",
 		"location": "",
 		"photo": "",
 		"description": "The Children's Defense Fund Leave No Child Behind® mission is to ensure every child a Healthy Start, a Head Start, a Fair Start, a Safe Start and a Moral Start in life and successful passage to adulthood with the help of caring families and communities.",
+		"nteeCodes": {
+			"R01": "Alliance/Advocacy Organizations",
+			"P30": "Children's and Youth Services",
+			"Q50": "Youth Development Programs "
+		},
 		"verified": true
 	},
 	{
@@ -62,11 +78,16 @@
 		"guideStarAddress": "https://www.guidestar.org/profile/73-6108657",
 		"phone": "12026623554",
 		"ein": "73-6108657",
-		"fiscalSponsor": "Travis Arnold",
+		"president": "Travis Arnold",
 		"address": "333 N. Meridian Ave., Oklahoma City, OK 73107",
 		"location": "",
 		"photo": "",
 		"description": "Providing hope and resources for those without life's essentials",
+		"nteeCodes": {
+			"K30": "Food Service, Free Food Distribution Programs",
+			"M20": "Disaster Preparedness and Relief Services",
+			"Q33": "International Relief"
+		},
 		"verified": false
 	}
 ]
