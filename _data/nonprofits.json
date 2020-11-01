@@ -1,5 +1,6 @@
 [
 	{
+		"_id": "5f9f334aff95055efcf764ce",
 		"name": "Save the Children Federation",
 		"email": "email@savethechildren.org",
 		"website": "https://savethechildren.org",
@@ -36,6 +37,7 @@
 		"verified": false
 	},
 	{
+		"_id": "5f9f334aff95055efcf764d0",
 		"name": "Alliance Defending Freedom",
 		"email": "email@unitedway.com",
 		"website": "https://unitedway.com",
@@ -53,6 +55,7 @@
 		"verified": false
 	},
 	{
+		"_id": "5f9f334aff95055efcf764d1",
 		"name": "Children's Defense Fund",
 		"email": "cdfinfo@childrensdefense.org",
 		"website": "https://childrensdefencefund.org",
@@ -72,6 +75,7 @@
 		"verified": true
 	},
 	{
+		"_id": "5f9f334aff95055efcf764d2",
 		"name": "Feed the Children, Inc.",
 		"email": "email@feedthechildren.org",
 		"website": "https://feedthechildren.org",
