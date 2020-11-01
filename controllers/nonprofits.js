@@ -1,3 +1,4 @@
+const geocoder = require('../utils/geocoder')
 const Nonprofit = require("../models/Nonprofit");
 const ErrorResponse = require("../utils/ErrorResponse");
 const asyncHandler = require("../middleware/async");
@@ -6,7 +7,12 @@ const asyncHandler = require("../middleware/async");
 // @route   GET /api/v1/nonprofits
 // @access  Public
 exports.getNonprofits = asyncHandler(async (req, res, next) => {
-    const nonprofits = await Nonprofit.find();
+    let query;
+    let queryStr = JSON.stringify(req.query);
+    queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `${match}`);    
+    
+    query = Nonprofit.find(JSON.parse(queryStr))
+    const nonprofits = await query;
     res.status(200).json({
         success: true,
         count: nonprofits.length,
@@ -89,4 +95,29 @@ exports.deleteNonprofit = asyncHandler(async (req, res, next) => {
             data: {},
         });
    
+});
+
+// @desc    Get nonprofits within a radius
+// @route   GET /api/v1/nonprofits/radius/:zipcode/:distance
+// @access  Private
+exports.getNonprofitsInRadius = asyncHandler(async (req, res, next) => {
+    const { zipcode, distance } = req.params;
+
+    // Get lat and long from geocoder
+    const loc = await geocoder.geocode(zipcode)
+    const lat = loc[0].latitude;
+    const lng = loc[0].longitude;
+
+    // Calc radius using radians
+    // Divide distance by radius of earth
+    // radius of earth: 3,963 mi / 6,378 km
+    const radius = distance / 3963
+    const nonprofits = await Nonprofit.find({
+        location: { $geoWithin: { $centerSphere: [ [ lng, lat ], radius ]} }
+    })
+    res.status(200).json({
+        success: true,
+        count: nonprofits.length,
+        data: nonprofits
+    })
 });
