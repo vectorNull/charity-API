@@ -11,6 +11,12 @@ const {
     getNonprofitsInRadius,
 } = require("../controllers/nonprofits");
 
+// Include other resource routers
+const programRouter = require('./programs');
+
+// re-route into other resource routers
+router.use('/:nonprofitId/programs', programRouter)
+
 // Geo route
 router.route("/radius/:zipcode/:distance").get(getNonprofitsInRadius);
 
