@@ -135,7 +135,7 @@ exports.updateNonprofit = asyncHandler(async (req, res, next) => {
 // @route   DELETE /api/v1/nonprofits
 // @access  Private
 exports.deleteNonprofit = asyncHandler(async (req, res, next) => {
-    const nonprofit = await Nonprofit.findByIdAndDelete(req.params.id);
+    const nonprofit = await Nonprofit.findById(req.params.id);
     if (!nonprofit) {
         return next(
             new ErrorResponse(
@@ -144,6 +144,8 @@ exports.deleteNonprofit = asyncHandler(async (req, res, next) => {
             )
         );
     }
+    nonprofit.remove();
+    
     res.status(200).json({
         success: true,
         data: {},
