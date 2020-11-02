@@ -8,10 +8,13 @@ const asyncHandler = require("../middleware/async");
 // @access  Public
 exports.getPrograms = asyncHandler(async (req, res, next) => {
     let query;
-    if(req.params) {
+    if(req.params.nonprofitId) {
         query = Program.find({ nonprofitId: req.params.nonprofitId });
     } else {
-        query = Program.find();
+        query = Program.find().populate({
+            path: 'nonprofitId',
+            select: 'name description'
+        });
     }
     const programs = await query;
     res.status(200).json({
