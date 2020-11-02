@@ -100,3 +100,27 @@ exports.updateProgram = asyncHandler(async (req, res, next) => {
         data: program,
     });
 });
+
+// @desc    Delete a single program
+// @route   DELETE /api/v1/programs/:id
+// @access  Private
+exports.deleteProgram = asyncHandler(async (req, res, next) => {
+    
+    const program = await Program.findById(req.params.id);
+    console.log(program)
+    if (!program) {
+        return next(
+            new ErrorResponse(
+                `No program with the id of ${req.params.id}`
+            ),
+            404
+        );
+    }
+    await program.remove();
+
+    //console.log(program)
+    res.status(200).json({
+        success: true,
+        data: {},
+    });
+});
