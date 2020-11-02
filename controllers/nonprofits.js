@@ -23,7 +23,7 @@ exports.getNonprofits = asyncHandler(async (req, res, next) => {
         (match) => `$${match}`
     );
     // Finding resource
-    query = Nonprofit.find(JSON.parse(queryStr));
+    query = Nonprofit.find(JSON.parse(queryStr)).populate('programs');
     // Select Fields
     if (req.query.select) {
         const fields = req.query.select.split(",").join(" ");
