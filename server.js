@@ -16,9 +16,11 @@ connectDB();
 
 // Routes
 const nonprofits = require("./routes/nonprofits");
+const programs = require("./routes/programs");
 
 // Mount Routers
 app.use("/api/v1/nonprofits", nonprofits);
+app.use("/api/v1/programs", programs);
 
 // Mount error handler
 app.use(errorHandler);
