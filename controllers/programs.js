@@ -2,27 +2,24 @@ const Program = require("../models/Program");
 const Nonprofit = require("../models/Nonprofit");
 const ErrorResponse = require("../utils/ErrorResponse");
 const asyncHandler = require("../middleware/async");
+const advancedResults = require('../middleware/advancedResults')
 
 // @desc    Get programs
 // @route   GET /api/v1/programs
 // @route   GET /api/v1/nonprofit/:nonprofitId/programs
 // @access  Public
 exports.getPrograms = asyncHandler(async (req, res, next) => {
-    let query;
+
     if (req.params.nonprofitId) {
-        query = Program.find({ nonprofitId: req.params.nonprofitId });
+        const programs = await Program.find({ nonprofitId: req.params.nonprofitId });
+        return res.status(200).json({
+            success: true,
+            count: programs.length,
+            data: programs
+        })
     } else {
-        query = Program.find().populate({
-            path: "nonprofitId",
-            select: "name description",
-        });
+        res.status(200).json(res.advancedResults)
     }
-    const programs = await query;
-    res.status(200).json({
-        success: true,
-        count: programs.length,
-        data: programs,
-    });
 });
 
 // @desc    Get a single program
