@@ -19,7 +19,7 @@ const ProgramSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    nonprofit: {
+    nonprofitId: {
         type: mongoose.Schema.ObjectId,
         ref: 'Nonprofit',
         required: true
