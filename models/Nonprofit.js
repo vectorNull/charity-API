@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const slugify = require("slugify");
 const geocoder = require("../utils/geocoder");
-const goecoder = require("../utils/geocoder");
 
 const NonprofitSchema = new mongoose.Schema({
     name: {
