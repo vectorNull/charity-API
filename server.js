@@ -1,9 +1,11 @@
+const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const colors = require("colors");
+const fileupload = require("express-fileupload");
 const connectDB = require("./config/database");
-const errorHandler = require('./middleware/error')
+const errorHandler = require("./middleware/error");
 
 const app = express();
 app.use(express.json());
@@ -13,6 +15,12 @@ dotenv.config({ path: "./config/config.env" });
 
 // Connect to database
 connectDB();
+
+// File uploading
+app.use(fileupload());
+
+// set static folder
+app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 const nonprofits = require("./routes/nonprofits");
@@ -27,16 +35,16 @@ app.use(errorHandler);
 
 // @desc	mount logger
 if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
+    app.use(morgan("dev"));
 }
 
 const PORT = process.env.PORT | 5000;
 
 app.listen(
-  PORT,
-  console.log(
-    `
+    PORT,
+    console.log(
+        `
     Listening in ${process.env.NODE_ENV} on port ${PORT}
 `.yellow.bold
-  )
+    )
 );
