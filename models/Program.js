@@ -22,7 +22,6 @@ const ProgramSchema = new mongoose.Schema({
     nonprofitId: {
         type: mongoose.Schema.ObjectId,
         ref: 'Nonprofit',
-        required: true
     }
 })
 
