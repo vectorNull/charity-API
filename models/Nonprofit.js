@@ -84,12 +84,15 @@ const NonprofitSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    },
+    }, 
     user: {
         type: mongoose.Schema.ObjectId,
         ref: "User",
         //required: true,
     },
+}, {
+    toJSON: { virtuals: true},
+    toObject: { virtuals: true }
 });
 
 // Create nonprofit slug from the name
@@ -116,5 +119,13 @@ NonprofitSchema.pre("save", async function (next) {
     this.address = undefined;
     next();
 });
+
+// Reverse populate with virtuals
+NonprofitSchema.virtual('programs', {
+    ref: 'Program',
+    localField: '_id',
+    foreignField: 'nonprofitId',
+    justOne: false
+})
 
 module.exports = mongoose.model("Nonprofit", NonprofitSchema);
