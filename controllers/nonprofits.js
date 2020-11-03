@@ -1,8 +1,8 @@
-const path = require("path");
-const geocoder = require("../utils/geocoder");
-const Nonprofit = require("../models/Nonprofit");
-const ErrorResponse = require("../utils/ErrorResponse");
-const asyncHandler = require("../middleware/async");
+const path = require('path');
+const geocoder = require('../utils/geocoder');
+const Nonprofit = require('../models/Nonprofit');
+const ErrorResponse = require('../utils/ErrorResponse');
+const asyncHandler = require('../middleware/async');
 
 // @desc    Get all nonprofits
 // @route   GET /api/v1/nonprofits
@@ -31,10 +31,23 @@ exports.getNonprofit = asyncHandler(async (req, res, next) => {
     }
 });
 
-// @desc    create a single nonprofit
+// @desc    Create a single nonprofit
 // @route   POST /api/v1/nonprofits
 // @access  Private
 exports.createNonprofit = asyncHandler(async (req, res, next) => {
+    // Add user to req.body
+    req.body.user = req.user.id;
+    // Check for published nonprofit
+    const publishedNonprofit = await Nonprofit.findOne({ user: req.user.id });
+    // if the user is not an admin, they can only add one nonprofit
+    if (publishedNonprofit && req.user.role != 'admin') {
+        return next(
+            new ErrorResponse(
+                `The user with id ${req.user.id} has already published a nonprofit`
+            ),
+            400
+        );
+    }
     const nonprofit = await Nonprofit.create(req.body);
     res.status(201).json({
         success: true,
@@ -132,9 +145,9 @@ exports.nonprofitPhotoUpload = asyncHandler(async (req, res, next) => {
     }
 
     const file = req.files.file;
-    
+
     // Validation to make sure file is photo
-    if (!file.mimetype.startsWith("image")) {
+    if (!file.mimetype.startsWith('image')) {
         return next(new ErrorResponse(`Please upload an image file`, 400));
     }
 
@@ -158,7 +171,7 @@ exports.nonprofitPhotoUpload = asyncHandler(async (req, res, next) => {
         await Nonprofit.findByIdAndUpdate(req.params.id, { photo: file.name });
         res.status(200).json({
             success: true,
-            data: file.name
-        })
+            data: file.name,
+        });
     });
 });
