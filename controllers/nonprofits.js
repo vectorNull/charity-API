@@ -132,7 +132,7 @@ exports.nonprofitPhotoUpload = asyncHandler(async (req, res, next) => {
     }
 
     const file = req.files.file;
-    console.log(file);
+    
     // Validation to make sure file is photo
     if (!file.mimetype.startsWith("image")) {
         return next(new ErrorResponse(`Please upload an image file`, 400));
