@@ -1,6 +1,6 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-
+const { protect, authorize } = require('../middleware/auth');
 // Deconstruct controllers
 const {
     getNonprofits,
@@ -10,34 +10,36 @@ const {
     deleteNonprofit,
     getNonprofitsInRadius,
     nonprofitPhotoUpload,
-} = require("../controllers/nonprofits");
+} = require('../controllers/nonprofits');
 
-const Nonprofit = require("../models/Nonprofit");
-const advancedResults = require("../middleware/advancedResults");
+const Nonprofit = require('../models/Nonprofit');
+const advancedResults = require('../middleware/advancedResults');
 
 // Include other resource routers
-const programRouter = require("./programs");
+const programRouter = require('./programs');
 
 // re-route into other resource routers
-router.use("/:nonprofitId/programs", programRouter);
+router.use('/:nonprofitId/programs', programRouter);
 
 // Geo route
-router.route("/radius/:zipcode/:distance").get(getNonprofitsInRadius);
+router.route('/radius/:zipcode/:distance').get(getNonprofitsInRadius);
 
 // Upload photo route
-router.route("/:id/photo").put(nonprofitPhotoUpload);
+router
+    .route('/:id/photo')
+    .put(protect, authorize('publisher', 'admin'), nonprofitPhotoUpload);
 
 // Root routes
 router
-    .route("/")
-    .get(advancedResults(Nonprofit, "programs"), getNonprofits)
-    .post(createNonprofit);
+    .route('/')
+    .get(advancedResults(Nonprofit, 'programs'), getNonprofits)
+    .post(protect, authorize('publisher', 'admin'), createNonprofit);
 
 // Routes requiring id
 router
-    .route("/:id")
+    .route('/:id')
     .get(getNonprofit)
-    .put(updateNonprofit)
-    .delete(deleteNonprofit);
+    .put(protect, authorize('publisher', 'admin'), updateNonprofit)
+    .delete(protect, authorize('publisher', 'admin'),deleteNonprofit);
 
 module.exports = router;
