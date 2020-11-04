@@ -59,14 +59,10 @@ exports.createNonprofit = asyncHandler(async (req, res, next) => {
 // @route   PUT /api/v1/nonprofits
 // @access  Private
 exports.updateNonprofit = asyncHandler(async (req, res, next) => {
-    const nonprofit = await Nonprofit.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {
-            new: true,
-            runValidators: true,
-        }
-    );
+    // Find nonprofit
+    let nonprofit = await Nonprofit.findById(req.params.id);
+
+    // Check to see if nonprofit exists
     if (!nonprofit) {
         return next(
             new ErrorResponse(
@@ -75,6 +71,25 @@ exports.updateNonprofit = asyncHandler(async (req, res, next) => {
             )
         );
     }
+
+    // Make sure user is nonprofit owner
+    if (
+        nonprofit.user.toString() !== req.user.id &&
+        req.user.role !== 'admin'
+    ) {
+        return next(
+            new ErrorResponse(
+                `User ${req.params.id} is not authorized to update this nonprofit`
+            )
+        );
+    }
+
+    // Update only after owner has been verified
+    nonprofit = await Nonprofit.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+        runValidators: true,
+    });
+
     res.status(200).json({
         success: true,
         data: nonprofit,
@@ -91,6 +106,18 @@ exports.deleteNonprofit = asyncHandler(async (req, res, next) => {
             new ErrorResponse(
                 `Resource not found with id of ${req.params.id}`,
                 400
+            )
+        );
+    }
+    
+    // Make sure user is nonprofit owner before deleting
+    if (
+        nonprofit.user.toString() !== req.user.id &&
+        req.user.role !== 'admin'
+    ) {
+        return next(
+            new ErrorResponse(
+                `User ${req.params.id} is not authorized to delete this nonprofit`
             )
         );
     }
@@ -140,6 +167,19 @@ exports.nonprofitPhotoUpload = asyncHandler(async (req, res, next) => {
             )
         );
     }
+
+     // Make sure user is nonprofit owner before deleting
+     if (
+        nonprofit.user.toString() !== req.user.id &&
+        req.user.role !== 'admin'
+    ) {
+        return next(
+            new ErrorResponse(
+                `User ${req.params.id} is not authorized to update this nonprofit`
+            )
+        );
+    }
+
     if (!req.files) {
         return next(new ErrorResponse(`Please upload a file`, 400));
     }
