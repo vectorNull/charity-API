@@ -17,9 +17,11 @@ const advancedResults = require('../middleware/advancedResults');
 
 // Include other resource routers
 const programRouter = require('./programs');
+const reviewRouter = require('./reviews');
 
 // re-route into other resource routers
 router.use('/:nonprofitId/programs', programRouter);
+router.use('/:nonprofitId/reviews', reviewRouter);
 
 // Geo route
 router.route('/radius/:zipcode/:distance').get(getNonprofitsInRadius);
