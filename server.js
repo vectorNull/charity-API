@@ -14,7 +14,7 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
-const cors = require('cors')
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
@@ -42,9 +42,9 @@ app.use(xss());
 
 // rate limiting
 const limiter = rateLimit({
-    windowMs: 10 * 60 * 1000,    // 10 mins
-    max: 100
-})
+    windowMs: 10 * 60 * 1000, // 10 mins
+    max: 100,
+});
 
 app.use(limiter);
 
@@ -52,7 +52,7 @@ app.use(limiter);
 app.use(hpp());
 
 // Enable CORS
-app.use(cors())
+app.use(cors());
 
 // set static folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -62,12 +62,14 @@ const nonprofits = require('./routes/nonprofits');
 const programs = require('./routes/programs');
 const auth = require('./routes/auth');
 const users = require('./routes/users');
+const reviews = require('./routes/reviews');
 
 // Mount Routers
 app.use('/api/v1/nonprofits', nonprofits);
 app.use('/api/v1/programs', programs);
 app.use('/api/v1/auth', auth);
 app.use('/api/v1/users', users);
+app.use('/api/v1/reviews', reviews);
 
 // Mount error handler
 app.use(errorHandler);
