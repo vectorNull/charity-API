@@ -34,7 +34,7 @@
 		"mongoose-intl-phone-number": "^1.1.1",
 		"morgan": "^1.10.0",
 		"node-geocoder": "^3.27.0",
-		"nodemailer": "^6.4.14",
+		"nodemailer": "^6.4.15",
 		"randomatic": "^3.1.1",
 		"slugify": "^1.4.6",
 		"xss-clean": "^0.1.1"
